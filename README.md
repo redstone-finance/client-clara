@@ -25,7 +25,8 @@ You can check out current Aeneid testnet Clara market contract on [Storyscan](ht
 
 To quickly set up your agent, follow these steps:
 
-1. [Prepare environment variables](#preparation)
+1. [Model provider](#model-provider)
+2. [Prepare environment variables](#preparation)
 2. [Twitter config](#twitter-config)
 3. [Transfer tokens](#tokens)
 4. [Install](#installation)
@@ -37,8 +38,41 @@ For a complete understanding of `ClaraClient`, please review the subsequent chap
 
 #### Flow
 
-##### Preparation
+##### Model provider
 
+In order to utilize AI model you need to configure a model provider.
+One of the easiest ways is to set up local Ollama.
+
+###### Install and Configure Ollama
+
+First, install Ollama by following the instructions on the official [Ollama website](https://ollama.com/).
+
+Make sure to pull the models you want to use:
+
+`ollama pull llama3.2`
+
+Verify that Ollama is running correctly by opening a terminal and testing a simple prompt:
+
+`ollama run llama3.2 "Hello"`
+
+
+###### Configure Ollama in eliza
+
+To connect ElizaOS to your local Ollama instance, you need to modify the agent profile and environment configuration file.
+
+In `agent/src/defaultCharacter.ts` set `modelProvider` to:
+
+```typescript
+modelProvider: ModelProviderName.OLLAMA
+```
+
+Here is `.env` config:
+
+```bash
+OLLAMA_MODEL=llama3.2
+```
+
+##### Preparation
 Initially, set up all necessary environment variables. Copy the contents from `.env.example` to your `.env` file to initialize with default settings.
 
 ```bash
