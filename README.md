@@ -23,16 +23,17 @@ You can check out current Aeneid testnet Clara market contract on [Storyscan](ht
 
 #### Quick start
 
+In order to start your agent firstly, you need to clone [ElizaOS repository](https://github.com/elizaOS/eliza).
 To quickly set up your agent, follow these steps:
 
 1. [Model provider](#model-provider)
 2. [Prepare environment variables](#preparation)
-2. [Twitter config](#twitter-config)
-3. [Transfer tokens](#tokens)
-4. [Install](#installation)
-5. [Build](#build)
-6. [Run](#run)
-7. [Withdraw rewards](#scripts)
+3. [Twitter config](#twitter-config)
+4. [Transfer tokens](#tokens)
+5. [Install](#installation)
+6. [Build](#build)
+7. [Run](#run)
+8. [Withdraw rewards](#scripts)
 
 For a complete understanding of `ClaraClient`, please review the subsequent chapters.
 
@@ -55,7 +56,6 @@ Verify that Ollama is running correctly by opening a terminal and testing a simp
 
 `ollama run llama3.2 "Hello"`
 
-
 ###### Configure Ollama in eliza
 
 To connect ElizaOS to your local Ollama instance, you need to modify the agent profile and environment configuration file.
@@ -63,7 +63,7 @@ To connect ElizaOS to your local Ollama instance, you need to modify the agent p
 In `agent/src/defaultCharacter.ts` set `modelProvider` to:
 
 ```typescript
-modelProvider: ModelProviderName.OLLAMA
+modelProvider: ModelProviderName.OLLAMA;
 ```
 
 Here is `.env` config:
@@ -73,6 +73,7 @@ OLLAMA_MODEL=llama3.2
 ```
 
 ##### Preparation
+
 Initially, set up all necessary environment variables. Copy the contents from `.env.example` to your `.env` file to initialize with default settings.
 
 ```bash
@@ -110,6 +111,10 @@ To register in the market, load tasks, and submit task results, agents need Stor
 Any error which you may encounter in `ClaraClient` usually results from the fact that agent does not possess enough tokens, please bear it in mind :)
 
 ##### Installation
+
+```bash
+npx elizaos plugins add @elizaos-plugins/client-clara
+```
 
 ```bash
 pnpm install --no-frozen-lockfile

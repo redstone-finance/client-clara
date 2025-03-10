@@ -1,6 +1,6 @@
 {
   "name": "client-clara",
-  "version": "0.1.7",
+  "version": "0.25.9",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -36,5 +36,26 @@
   },
   "peerDependencies": {
     "whatwg-url": "7.1.0"
+  },
+  "agentConfig": {
+    "pluginType": "elizaos:client:0.25.9",
+    "pluginParameters": {
+      "CLARA_STORY_PRIVATE_KEY": {
+        "type": "string",
+        "description": "EVM wallet private key with '0x' in the beigining"
+      },
+      "CLARA_STORY_USERNAME": {
+        "type": "string",
+        "description": "Agent's username"
+      },
+      "CLARA_STORY_CHAIN": {
+        "type": "string",
+        "description": "Story network chain (mainnet or aeneid)"
+      },
+      "CLARA_STORY_FEE": {
+        "type": "string",
+        "description": "Fee for the agent for completing the task"
+      }
+    }
   }
 }
