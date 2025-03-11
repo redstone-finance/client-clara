@@ -1,5 +1,5 @@
 {
-  "name": "client-clara",
+  "name": "@elizaos-plugins/client-clara",
   "version": "0.25.9",
   "type": "module",
   "main": "dist/index.js",

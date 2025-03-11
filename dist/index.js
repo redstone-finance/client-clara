@@ -1,6 +1,6 @@
 import {
   secp256k1
-} from "./chunk-GH23YJZM.js";
+} from "./chunk-P3FFKC3U.js";
 import {
   BaseError,
   BytesSizeMismatchError,
@@ -42,7 +42,7 @@ import {
   toHex,
   trim,
   wrapConstructor
-} from "./chunk-O7TRR4XF.js";
+} from "./chunk-ALNF5C6I.js";
 import "./chunk-PR4QN5HX.js";
 
 // src/client.ts
@@ -124,13 +124,13 @@ import {
 } from "redstone-clara-sdk";
 import { elizaLogger as elizaLogger2 } from "@elizaos/core";
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/publicKeyToAddress.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/publicKeyToAddress.js
 function publicKeyToAddress(publicKey) {
   const address = keccak256(`0x${publicKey.substring(4)}`).substring(26);
   return checksumAddress(`0x${address}`);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/encoding/toRlp.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/encoding/toRlp.js
 function toRlp(bytes, to = "hex") {
   const encodable = getEncodable(bytes);
   const cursor = createCursor(new Uint8Array(encodable.length));
@@ -219,7 +219,7 @@ function getSizeOfLength(length) {
   throw new BaseError("Length is too large.");
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/experimental/eip7702/utils/hashAuthorization.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/experimental/eip7702/utils/hashAuthorization.js
 function hashAuthorization(parameters) {
   const { chainId, contractAddress, nonce, to } = parameters;
   const hash = keccak256(concatHex([
@@ -235,7 +235,7 @@ function hashAuthorization(parameters) {
   return hash;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/blobsToCommitments.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/blobsToCommitments.js
 function blobsToCommitments(parameters) {
   const { kzg } = parameters;
   const to = parameters.to ?? (typeof parameters.blobs[0] === "string" ? "hex" : "bytes");
@@ -246,7 +246,7 @@ function blobsToCommitments(parameters) {
   return to === "bytes" ? commitments : commitments.map((x) => bytesToHex(x));
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/blobsToProofs.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/blobsToProofs.js
 function blobsToProofs(parameters) {
   const { kzg } = parameters;
   const to = parameters.to ?? (typeof parameters.blobs[0] === "string" ? "hex" : "bytes");
@@ -261,7 +261,7 @@ function blobsToProofs(parameters) {
   return to === "bytes" ? proofs : proofs.map((x) => bytesToHex(x));
 }
 
-// ../../node_modules/.pnpm/@noble+hashes@1.6.1/node_modules/@noble/hashes/esm/_md.js
+// node_modules/.pnpm/@noble+hashes@1.6.1/node_modules/@noble/hashes/esm/_md.js
 function setBigUint64(view, byteOffset, value, isLE) {
   if (typeof view.setBigUint64 === "function")
     return view.setBigUint64(byteOffset, value, isLE);
@@ -363,7 +363,7 @@ var HashMD = class extends Hash {
   }
 };
 
-// ../../node_modules/.pnpm/@noble+hashes@1.6.1/node_modules/@noble/hashes/esm/sha256.js
+// node_modules/.pnpm/@noble+hashes@1.6.1/node_modules/@noble/hashes/esm/sha256.js
 var SHA256_K = /* @__PURE__ */ new Uint32Array([
   1116352408,
   1899447441,
@@ -513,7 +513,7 @@ var SHA256 = class extends HashMD {
 };
 var sha256 = /* @__PURE__ */ wrapConstructor(() => new SHA256());
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/hash/sha256.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/hash/sha256.js
 function sha2562(value, to_) {
   const to = to_ || "hex";
   const bytes = sha256(isHex(value, { strict: false }) ? toBytes(value) : value);
@@ -522,7 +522,7 @@ function sha2562(value, to_) {
   return toHex(bytes);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/commitmentToVersionedHash.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/commitmentToVersionedHash.js
 function commitmentToVersionedHash(parameters) {
   const { commitment, version = 1 } = parameters;
   const to = parameters.to ?? (typeof commitment === "string" ? "hex" : "bytes");
@@ -531,7 +531,7 @@ function commitmentToVersionedHash(parameters) {
   return to === "bytes" ? versionedHash : bytesToHex(versionedHash);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/commitmentsToVersionedHashes.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/commitmentsToVersionedHashes.js
 function commitmentsToVersionedHashes(parameters) {
   const { commitments, version } = parameters;
   const to = parameters.to ?? (typeof commitments[0] === "string" ? "hex" : "bytes");
@@ -546,7 +546,7 @@ function commitmentsToVersionedHashes(parameters) {
   return hashes;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/constants/blob.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/constants/blob.js
 var blobsPerTransaction = 6;
 var bytesPerFieldElement = 32;
 var fieldElementsPerBlob = 4096;
@@ -555,10 +555,10 @@ var maxBytesPerTransaction = bytesPerBlob * blobsPerTransaction - // terminator 
 1 - // zero byte (0x00) appended to each field element.
 1 * fieldElementsPerBlob * blobsPerTransaction;
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/constants/kzg.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/constants/kzg.js
 var versionedHashVersionKzg = 1;
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/errors/blob.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/errors/blob.js
 var BlobSizeTooLargeError = class extends BaseError {
   constructor({ maxSize, size: size2 }) {
     super("Blob size is too large.", {
@@ -592,7 +592,7 @@ var InvalidVersionedHashVersionError = class extends BaseError {
   }
 };
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/toBlobs.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/toBlobs.js
 function toBlobs(parameters) {
   const to = parameters.to ?? (typeof parameters.data === "string" ? "hex" : "bytes");
   const data = typeof parameters.data === "string" ? hexToBytes(parameters.data) : parameters.data;
@@ -627,7 +627,7 @@ function toBlobs(parameters) {
   return to === "bytes" ? blobs.map((x) => x.bytes) : blobs.map((x) => bytesToHex(x.bytes));
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/blob/toBlobSidecars.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/blob/toBlobSidecars.js
 function toBlobSidecars(parameters) {
   const { data, kzg, to } = parameters;
   const blobs = parameters.blobs ?? toBlobs({ data, to });
@@ -643,7 +643,7 @@ function toBlobSidecars(parameters) {
   return sidecars;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/transaction/getTransactionType.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/transaction/getTransactionType.js
 function getTransactionType(transaction) {
   if (transaction.type)
     return transaction.type;
@@ -662,7 +662,7 @@ function getTransactionType(transaction) {
   throw new InvalidSerializableTransactionError({ transaction });
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/errors/typedData.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/errors/typedData.js
 var InvalidDomainError = class extends BaseError {
   constructor({ domain }) {
     super(`Invalid domain "${stringify(domain)}".`, {
@@ -687,7 +687,7 @@ var InvalidStructTypeError = class extends BaseError {
   }
 };
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/signature/hashTypedData.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/signature/hashTypedData.js
 function hashTypedData(parameters) {
   const { domain = {}, message, primaryType } = parameters;
   const types = {
@@ -800,7 +800,7 @@ function encodeField({ types, name, type, value }) {
   return [{ type }, value];
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/typedData.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/typedData.js
 function validateTypedData(parameters) {
   const { domain, message, primaryType, types } = parameters;
   const validateData = (struct, data) => {
@@ -865,10 +865,10 @@ function validateReference(type) {
     throw new InvalidStructTypeError({ type });
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/constants/strings.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/constants/strings.js
 var presignMessagePrefix = "Ethereum Signed Message:\n";
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/signature/toPrefixedMessage.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/signature/toPrefixedMessage.js
 function toPrefixedMessage(message_) {
   const message = (() => {
     if (typeof message_ === "string")
@@ -881,12 +881,12 @@ function toPrefixedMessage(message_) {
   return concat([prefix, message]);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/signature/hashMessage.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/signature/hashMessage.js
 function hashMessage(message, to_) {
   return keccak256(toPrefixedMessage(message), to_);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/transaction/assertTransaction.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/transaction/assertTransaction.js
 function assertTransactionEIP7702(transaction) {
   const { authorizationList } = transaction;
   if (authorizationList) {
@@ -953,7 +953,7 @@ function assertTransactionLegacy(transaction) {
     throw new FeeCapTooHighError({ maxFeePerGas: gasPrice });
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/experimental/eip7702/utils/serializeAuthorizationList.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/experimental/eip7702/utils/serializeAuthorizationList.js
 function serializeAuthorizationList(authorizationList) {
   if (!authorizationList || authorizationList.length === 0)
     return [];
@@ -970,7 +970,7 @@ function serializeAuthorizationList(authorizationList) {
   return serializedAuthorizationList;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/transaction/serializeAccessList.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/transaction/serializeAccessList.js
 function serializeAccessList(accessList) {
   if (!accessList || accessList.length === 0)
     return [];
@@ -990,7 +990,7 @@ function serializeAccessList(accessList) {
   return serializedAccessList;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/transaction/serializeTransaction.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/transaction/serializeTransaction.js
 function serializeTransaction(transaction, signature) {
   const type = getTransactionType(transaction);
   if (type === "eip1559")
@@ -1190,7 +1190,7 @@ function toYParitySignatureArray(transaction, signature_) {
   return [yParity_, r === "0x00" ? "0x" : r, s === "0x00" ? "0x" : s];
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/errors/unit.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/errors/unit.js
 var InvalidDecimalNumberError = class extends BaseError {
   constructor({ value }) {
     super(`Number \`${value}\` is not a valid decimal number.`, {
@@ -1199,7 +1199,7 @@ var InvalidDecimalNumberError = class extends BaseError {
   }
 };
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/unit/parseUnits.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/unit/parseUnits.js
 function parseUnits(value, decimals) {
   if (!/^(-?)([0-9]*)\.?([0-9]*)$/.test(value))
     throw new InvalidDecimalNumberError({ value });
@@ -1234,12 +1234,12 @@ function parseUnits(value, decimals) {
   return BigInt(`${negative ? "-" : ""}${integer}${fraction}`);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/unit/parseEther.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/unit/parseEther.js
 function parseEther(ether, unit = "wei") {
   return parseUnits(ether, etherUnits[unit]);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/utils/signature/serializeSignature.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/utils/signature/serializeSignature.js
 function serializeSignature({ r, s, to = "hex", v, yParity }) {
   const yParity_ = (() => {
     if (yParity === 0 || yParity === 1)
@@ -1254,7 +1254,7 @@ function serializeSignature({ r, s, to = "hex", v, yParity }) {
   return hexToBytes(signature);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/toAccount.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/toAccount.js
 function toAccount(source) {
   if (typeof source === "string") {
     if (!isAddress(source, { strict: false }))
@@ -1279,7 +1279,7 @@ function toAccount(source) {
   };
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/sign.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/sign.js
 var extraEntropy = false;
 async function sign({ hash, privateKey, to = "object" }) {
   const { r, s, recovery } = secp256k1.sign(hash.slice(2), privateKey.slice(2), { lowS: true, extraEntropy });
@@ -1296,7 +1296,7 @@ async function sign({ hash, privateKey, to = "object" }) {
   })();
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signAuthorization.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signAuthorization.js
 async function experimental_signAuthorization(parameters) {
   const { contractAddress, chainId, nonce, privateKey, to = "object" } = parameters;
   const signature = await sign({
@@ -1314,12 +1314,12 @@ async function experimental_signAuthorization(parameters) {
   return signature;
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signMessage.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signMessage.js
 async function signMessage({ message, privateKey }) {
   return await sign({ hash: hashMessage(message), privateKey, to: "hex" });
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signTransaction.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signTransaction.js
 async function signTransaction(parameters) {
   const { privateKey, transaction, serializer = serializeTransaction } = parameters;
   const signableTransaction = (() => {
@@ -1337,7 +1337,7 @@ async function signTransaction(parameters) {
   return serializer(transaction, signature);
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signTypedData.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/utils/signTypedData.js
 async function signTypedData(parameters) {
   const { privateKey, ...typedData } = parameters;
   return await sign({
@@ -1347,7 +1347,7 @@ async function signTypedData(parameters) {
   });
 }
 
-// ../../node_modules/.pnpm/viem@2.21.58_bufferutil@4.0.9_typescript@5.8.2_utf-8-validate@5.0.10_zod@3.23.8/node_modules/viem/_esm/accounts/privateKeyToAccount.js
+// node_modules/.pnpm/viem@2.21.58_zod@3.23.8/node_modules/viem/_esm/accounts/privateKeyToAccount.js
 function privateKeyToAccount(privateKey, options = {}) {
   const { nonceManager } = options;
   const publicKey = toHex(secp256k1.getPublicKey(privateKey.slice(2), false));
